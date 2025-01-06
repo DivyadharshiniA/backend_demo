@@ -100,8 +100,14 @@ import express from "express";
 import dotenv from "dotenv";
 import mongoose from "mongoose";
 import bodyParser from "body-parser";
+<<<<<<< HEAD
 import router from "./routes/userRoute.js"; // Ensure this path is correct
 import cors from "cors";
+=======
+import router from "./routes/userRoute.js";
+import cors from "cors"
+const app=express();
+>>>>>>> 75d8de5b05e72baf0b92a0360ae6710d492b4050
 
 const app = express();
 
@@ -118,6 +124,7 @@ app.use('/api/user', router);
 
 // MongoDB connection and server start
 mongoose
+<<<<<<< HEAD
   .connect(MONGO_URL, { useNewUrlParser: true, useUnifiedTopology: true }) // Ensure proper connection options
   .then(() => {
     console.log("db connected");
@@ -128,3 +135,12 @@ mongoose
   .catch((err) => {
     console.error("Error connecting to MongoDB:", err);
   });
+=======
+         .connect(MONGO_URL)
+         .then(()=>{
+            console.log("db connected");
+            app.listen(PORT,()=>{
+                console.log(`Server is running on port ${PORT}`)
+            })
+         })
+>>>>>>> 75d8de5b05e72baf0b92a0360ae6710d492b4050
